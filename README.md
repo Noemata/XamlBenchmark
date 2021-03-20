@@ -6,7 +6,7 @@ Description:
 
 This project compares the performance of three XAML frameworks: WPF, UWP and WinUI
 
-Test cases were adjusted somewhat because Maui is not yet equivalent in all drawing operations across the different XAML frameworks.  The work done by on the Windows Community Toolkit demonstrates that it is possible to do equivalent drawing operations in UWP and WinUI, but those approaches are not yet reflected in the code of Maui.
+Test cases were adjusted somewhat because Maui is not yet equivalent in all drawing operations across the different XAML frameworks.  The work done on the Windows Community Toolkit demonstrates that it is possible to do equivalent drawing operations in UWP and WinUI, but those approaches are not yet reflected in the code of Maui.
 
 This is not an exaustive performance test, but it does touch on the core capabilities of the XAML frameworks being tested.
 
