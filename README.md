@@ -32,7 +32,7 @@ Yes, I was surprised by that.
 
 Unfortunately, WinUI is not yet in the running.  It is extremely sluggish in comparison to WPF and UWP.  Presumably, WinUI still needs a lot of under the hood tuning.
 
-Microsoft has been boasting about how comparable WinUI is to UWP.  Clearly, WinUI has a long way to go before it catches up to UWP.
+Microsoft has been boasting about how comparable WinUI is to UWP.  Clearly, WinUI has a significant performance and feature gap when compared to UWP.
 
 The good news, the performance of WPF using .Net 3.x and 5.x has seen drastic improvements.
 
