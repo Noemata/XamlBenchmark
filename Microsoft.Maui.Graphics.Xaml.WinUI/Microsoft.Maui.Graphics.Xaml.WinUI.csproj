@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>Microsoft.Maui.Graphics.Xaml.WinUI</RootNamespace>
+    <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Microsoft.Maui.Graphics.Xaml.UWP\XamlCanvas.cs" Link="XamlCanvas.cs" />
+    <Compile Include="..\Microsoft.Maui.Graphics.Xaml.UWP\XamlCanvasSession.cs" Link="XamlCanvasSession.cs" />
+    <Compile Include="..\Microsoft.Maui.Graphics.Xaml.UWP\XamlCanvasState.cs" Link="XamlCanvasState.cs" />
+    <Compile Include="..\Microsoft.Maui.Graphics.Xaml.UWP\XamlGraphicsExtensions.cs" Link="XamlGraphicsExtensions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+      <PackageReference Include="Microsoft.ProjectReunion" Version="0.5.0-prerelease" />
+      <PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.5.0-prerelease" />
+      <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.5.0-prerelease" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Maui.Graphics\Microsoft.Maui.Graphics.csproj" />
+  </ItemGroup>
+</Project>

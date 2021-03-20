@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\royals.jpg" />
+    <None Remove="Resources\royals.png" />
+    <None Remove="Resources\swirl_pattern.jpg" />
+    <None Remove="Resources\swirl_pattern.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\royals.jpg" />
+    <EmbeddedResource Include="Resources\royals.png" />
+    <EmbeddedResource Include="Resources\swirl_pattern.jpg" />
+    <EmbeddedResource Include="Resources\swirl_pattern.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Maui.Graphics.Text.Markdig\Microsoft.Maui.Graphics.Text.Markdig.csproj" />
+    <ProjectReference Include="..\Microsoft.Maui.Graphics\Microsoft.Maui.Graphics.csproj" />
+  </ItemGroup>
+
+</Project>
