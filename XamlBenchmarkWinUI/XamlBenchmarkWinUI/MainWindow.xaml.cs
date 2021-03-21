@@ -13,7 +13,7 @@ namespace XamlBenchmarkWinUI
     {
         private readonly XamlCanvas canvas = new XamlCanvas();
         private IDrawable drawable;
-        const int TestIterations = 300;
+        const int TestIterations = GlobalVariables.TestCount;
         int testIncrement = -1;
         Stopwatch timer = new Stopwatch();
 
@@ -103,6 +103,7 @@ namespace XamlBenchmarkWinUI
                 testIncrement = 0;
                 GlobalVariables.TotalPasses = 0;
                 GlobalVariables.TotalElapsedMM = 0;
+                timer.Reset();
                 timer.Start();
             }
             else
