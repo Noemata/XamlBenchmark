@@ -16,7 +16,7 @@ This is not an exaustive performance test, but it does touch on the core capabil
 (  UWP  ) Elapsed: 18865 ms, Passes: 1200
 ( WinUI ) Elapsed: 67067 ms, Passes: 1200
 
-A higher elapsed time results in slower UI rendering interval.  WinUI is roughly 3 times slower than WPF and UWP.
+A higher elapsed time results in a slower UI rendering interval.  WinUI is roughly 3 times slower than WPF and UWP.
 
 ## License same as original
 
