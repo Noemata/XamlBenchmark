@@ -10,6 +10,14 @@ Test cases were adjusted somewhat because Maui is not yet equivalent in all draw
 
 This is not an exaustive performance test, but it does touch on the core capabilities of the XAML frameworks being tested.
 
+## Results
+
+(  WPF  ) Elapsed: 16997 ms, Passes: 1200
+(  UWP  ) Elapsed: 18865 ms, Passes: 1200
+( WinUI ) Elapsed: 67067 ms, Passes: 1200
+
+A higher elapsed time results in slower UI rendering interval.  WinUI is roughly 3 times slower than WPF and UWP.
+
 ## License same as original
 
 https://github.com/dotnet/Microsoft.Maui.Graphics/blob/main/LICENSE
@@ -35,5 +43,3 @@ Unfortunately, WinUI is not yet in the running.  It is extremely sluggish in com
 Microsoft has been boasting about how comparable WinUI is to UWP.  Clearly, WinUI has a significant performance and feature gap when compared to UWP.
 
 The good news, the performance of WPF using .Net 3.x and 5.x has seen drastic improvements.
-
-Once these tests are tuned further, more formal results will be provided.
