@@ -1,12 +1,16 @@
-﻿using Windows.UI.Xaml.Media;
+﻿using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
+
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Controls;
+using Windows.ApplicationModel.DataTransfer;
 
 using Microsoft.Maui.Graphics;
 using Microsoft.Maui.Graphics.Xaml;
 
 using GraphicsTester.Scenarios;
-using Windows.UI.Xaml;
-using System.Diagnostics;
 
 namespace XamlBenchmarkUWP
 {
@@ -62,6 +66,30 @@ namespace XamlBenchmarkUWP
             }
         }
 
+        private void AddToClipboard()
+        {
+            DataPackageView dataPkgView = Clipboard.GetContent();
+
+            if (dataPkgView.Contains(StandardDataFormats.Text))
+            {
+                Task<string> task = dataPkgView.GetTextAsync().AsTask();
+                try { task.RunSynchronously(); } catch (InvalidOperationException) { }
+                string fullResult = task.Result;
+                dataPkgView.ReportOperationCompleted(DataPackageOperation.Copy);
+
+                string testResult = $"(  UWP  ) Elapsed: {Elapsed.Text}, Passes: {Passes.Text}";
+
+                var dataPkg = new DataPackage { RequestedOperation = DataPackageOperation.Copy };
+
+                if (string.IsNullOrEmpty(fullResult))
+                    dataPkg.SetText($"{testResult}\n");
+                else
+                    dataPkg.SetText($"{fullResult}\n{testResult}\n");
+
+                Clipboard.SetContent(dataPkg);
+            }
+        }
+
         private void OnRendering(object sender, object e)
         {
             if (testIncrement != -1)
@@ -89,10 +117,11 @@ namespace XamlBenchmarkUWP
                     timer.Stop();
                     GlobalVariables.TotalElapsedMM = timer.ElapsedMilliseconds;
 
-                    Elapsed.Text = GlobalVariables.TotalElapsedMM.ToString();
-                    Passes.Text = GlobalVariables.TotalPasses.ToString();
+                    Elapsed.Text = $"{GlobalVariables.TotalElapsedMM} ms";
+                    Passes.Text = $"{GlobalVariables.TotalPasses}";
 
                     testIncrement = -1;
+                    AddToClipboard();
                 }
             }
         }

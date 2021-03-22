@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Windows;
+using System.Diagnostics;
 using System.Windows.Media;
 
 using Microsoft.Maui.Graphics;
 using Microsoft.Maui.Graphics.Xaml;
 
 using GraphicsTester.Scenarios;
-using System.Diagnostics;
 
 namespace XamlBenchmarkWPF
 {
@@ -62,6 +62,17 @@ namespace XamlBenchmarkWPF
             }
         }
 
+        private void AddToClipboard()
+        {
+            string fullResult = Clipboard.GetText();
+            string testResult = $"(  WPF  ) Elapsed: {Elapsed.Text}, Passes: {Passes.Text}";
+
+            if (string.IsNullOrEmpty(fullResult))
+                Clipboard.SetDataObject($"{testResult}\n");
+            else
+                Clipboard.SetDataObject($"{fullResult}\n{testResult}");
+        }
+
         private void OnRendering(object sender, EventArgs e)
         {
             if (testIncrement != -1)
@@ -89,10 +100,12 @@ namespace XamlBenchmarkWPF
                     timer.Stop();
                     GlobalVariables.TotalElapsedMM = timer.ElapsedMilliseconds;
 
-                    Elapsed.Text = GlobalVariables.TotalElapsedMM.ToString();
-                    Passes.Text = GlobalVariables.TotalPasses.ToString();
+                    Elapsed.Text = $"{GlobalVariables.TotalElapsedMM} ms";
+                    Passes.Text = $"{GlobalVariables.TotalPasses}";
 
                     testIncrement = -1;
+
+                    AddToClipboard();
                 }
             }
         }
