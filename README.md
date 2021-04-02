@@ -38,7 +38,7 @@ If you examine the code, you will see an almost equivalent test implementation f
 
 Preliminary results show that UWP has the fastest XAML rendering layer.  WPF has a very respectable showing.
 
-WinUI has a 2x performance gap.  It is sluggish in comparison to WPF and UWP.  Presumably, WinUI still needs a lot of under the hood tuning.
+WinUI is sluggish in comparison to WPF and UWP.  Presumably, WinUI still needs a lot of under the hood tuning.
 
 Microsoft has been boasting about how comparable WinUI is to UWP.  WinUI needs to narrow the performance and feature gap when compared to UWP to gain wider adoption from existing UWP deveopers.
 
