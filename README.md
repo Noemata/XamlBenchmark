@@ -10,13 +10,15 @@ Test cases were adjusted somewhat because Maui is not yet equivalent in all draw
 
 This is not an exaustive performance test, but it does touch on the core capabilities of the XAML frameworks being tested.
 
+The original run of this benchmark was flawed.  Both UWP and WinUI take a performance hit when attached to Visual Studio 2019.
+
 ## Results
 
-## (  WPF  ) Elapsed: 16997 ms, Passes: 1200
-## (  UWP  ) Elapsed: 18865 ms, Passes: 1200
-## ( WinUI ) Elapsed: 67067 ms, Passes: 1200
+## (  UWP  ) Elapsed: 11151 ms, Passes: 1200
+## (  WPF  ) Elapsed: 16470 ms, Passes: 1200
+## ( WinUI ) Elapsed: 32407 ms, Passes: 1200
 
-A higher elapsed time results in a slower UI rendering interval.  WinUI is roughly 3 times slower than WPF and UWP.  Release build memory utilization for the benchmark maps out as follows: WPF ~100MB, UWP ~45MB, WinUI 700+MB.  Because WinUI is still unfinished, we can expect major improvements in its memory footprint.  At the moment WinUI 0.5 also leaks, so unrecoverable memory loss is taking place.
+A higher elapsed time results in a slower UI rendering interval.  WinUI is roughly 2 times slower than WPF and UWP.  Release build memory utilization for the benchmark maps out as follows: WPF ~91MB, UWP ~37MB, WinUI 700+MB.  Because WinUI is still unfinished, we can expect major improvements in its memory footprint.  At the moment WinUI 0.5 also leaks, so unrecoverable memory loss is taking place.
 
 ## License same as original
 
@@ -34,12 +36,10 @@ If you examine the code, you will see an almost equivalent test implementation f
 
 ## Notes
 
-Preliminary results show that WPF outperforms UWP and WinUI in release and debug builds.  The gap between WPF and UWP is much narrower for a release build.
+Preliminary results show that UWP has the fastest XAML rendering layer.  WPF has a very respectable showing.
 
-Yes, I was surprised by that.
+WinUI has a 2x performance gap.  It is sluggish in comparison to WPF and UWP.  Presumably, WinUI still needs a lot of under the hood tuning.
 
-Unfortunately, WinUI is not yet in the running.  It is extremely sluggish in comparison to WPF and UWP.  Presumably, WinUI still needs a lot of under the hood tuning.
+Microsoft has been boasting about how comparable WinUI is to UWP.  WinUI needs to narrow the performance and feature gap when compared to UWP to gain wider adoption from existing UWP deveopers.
 
-Microsoft has been boasting about how comparable WinUI is to UWP.  Clearly, WinUI has a significant performance and feature gap when compared to UWP.
-
-The good news, the performance of WPF using .Net 3.x and 5.x has seen drastic improvements.
+WPF developers looking for a fresh look and the prospect of future feature gains may want to start looking at WinUI despite its performance deficit.
