@@ -4,13 +4,13 @@ Thanks to Microsoft's recent work on their Maui cross-platform graphics library,
 
 Description: 
 
+!! The original run of this benchmark was flawed !!  Both UWP and WinUI take a performance hit when attached to Visual Studio 2019.
+
 This project compares the performance of three XAML frameworks: WPF, UWP and WinUI (v 0.5 as of March 30, 2021)
 
 Test cases were adjusted somewhat because Maui is not yet equivalent in all drawing operations across the different XAML frameworks.  The work done on the Windows Community Toolkit demonstrates that it is possible to do equivalent drawing operations in UWP and WinUI, but those approaches are not yet reflected in the code of Maui.
 
 This is not an exaustive performance test, but it does touch on the core capabilities of the XAML frameworks being tested.
-
-The original run of this benchmark was flawed.  Both UWP and WinUI take a performance hit when attached to Visual Studio 2019.
 
 ## Results
 
@@ -18,7 +18,7 @@ The original run of this benchmark was flawed.  Both UWP and WinUI take a perfor
 ## (  WPF  ) Elapsed: 16470 ms, Passes: 1200
 ## ( WinUI ) Elapsed: 32407 ms, Passes: 1200
 
-A higher elapsed time results in a slower UI rendering interval.  WinUI is roughly 2 times slower than WPF and UWP.  Release build memory utilization for the benchmark maps out as follows: WPF ~91MB, UWP ~37MB, WinUI 700+MB.  Because WinUI is still unfinished, we can expect major improvements in its memory footprint.  At the moment WinUI 0.5 also leaks, so unrecoverable memory loss is taking place.
+A higher elapsed time results in a slower UI rendering interval.  WinUI is roughly 3 times slower than UWP and slightly less than 2 times slower when compared to WPF.  Release build memory utilization for the benchmark maps out as follows: WPF ~91MB, UWP ~37MB, WinUI 700+MB.  Because WinUI is still unfinished, we can expect major improvements in its memory footprint.  At the moment WinUI 0.5 also leaks, so unrecoverable memory loss is taking place.
 
 ## License same as original
 
