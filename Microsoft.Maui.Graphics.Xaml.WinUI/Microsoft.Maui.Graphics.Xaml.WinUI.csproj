@@ -17,7 +17,7 @@
     <Compile Include="..\Microsoft.Maui.Graphics.Xaml.UWP\XamlCanvasState.cs" Link="XamlCanvasState.cs" />
     <Compile Include="..\Microsoft.Maui.Graphics.Xaml.UWP\XamlGraphicsExtensions.cs" Link="XamlGraphicsExtensions.cs" />
   </ItemGroup>  <ItemGroup>
-  <PackageReference Include="Microsoft.ProjectReunion" Version="0.5.5" />
+  <PackageReference Include="Microsoft.ProjectReunion" Version="0.5.7" />
 </ItemGroup>
 
   <ItemGroup>
