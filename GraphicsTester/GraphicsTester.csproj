@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Maui.Graphics.Text.Markdig\Microsoft.Maui.Graphics.Text.Markdig.csproj" />
-    <ProjectReference Include="..\Microsoft.Maui.Graphics\Microsoft.Maui.Graphics.csproj" />
+    <ProjectReference Include="..\MAUI\Microsoft.Maui.Graphics.Text.Markdig\Microsoft.Maui.Graphics.Text.Markdig.csproj" />
+    <ProjectReference Include="..\MAUI\Microsoft.Maui.Graphics\Microsoft.Maui.Graphics.csproj" />
   </ItemGroup>
 
 </Project>

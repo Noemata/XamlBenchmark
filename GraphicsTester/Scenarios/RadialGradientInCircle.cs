@@ -12,17 +12,16 @@ namespace GraphicsTester.Scenarios
         {
             canvas.SaveState();
             
-            var paint = new Paint
+            var paint = new RadialGradientPaint
             {
-                PaintType = PaintType.RadialGradient,
                 StartColor = Colors.White,
                 EndColor = Colors.Black
             };
 
-            canvas.SetFillPaint(paint, 200, 200, 300, 200);
+            canvas.SetFillPaint(paint, new RectangleF(200, 200, 300, 200));
             canvas.FillEllipse(100, 100, 200, 200);
 
-            canvas.SetFillPaint(paint, 250, 500, 100, 500);
+            canvas.SetFillPaint(paint, new RectangleF(250, 500, 100, 500));
             canvas.FillEllipse(100, 400, 200, 200);
 
             canvas.RestoreState();

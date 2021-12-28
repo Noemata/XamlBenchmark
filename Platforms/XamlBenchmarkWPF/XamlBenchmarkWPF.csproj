@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\GraphicsTester\GraphicsTester.csproj" />
+    <ProjectReference Include="..\..\MAUI\Microsoft.Maui.Graphics.Xaml.WPF\Microsoft.Maui.Graphics.Xaml.WPF.csproj" />
+    <ProjectReference Include="..\..\MAUI\Microsoft.Maui.Graphics\Microsoft.Maui.Graphics.csproj" />
+  </ItemGroup>
+
+</Project>

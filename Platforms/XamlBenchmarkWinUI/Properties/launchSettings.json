@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "XamlBenchmarkWinUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "XamlBenchmarkWinUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

@@ -27,7 +27,7 @@ namespace GraphicsTester.Scenarios
             // MP! fixme: not rendering to canvas
             if (image != null)
             {
-                canvas.SetFillPaint(image.AsPaint(), 0, 0, 0, 0);
+                canvas.SetFillPaint(image.AsPaint(), new RectangleF(0, 0, 0, 0));
                 canvas.FillRectangle(50, 50, 500, 500);
             }
         }
