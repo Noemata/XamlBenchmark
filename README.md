@@ -43,3 +43,7 @@ WinUI is slower in comparison to WPF and UWP. But it had major improvments in la
 Microsoft has been boasting about how comparable WinUI is to UWP.  WinUI needs to narrow the performance and feature gap when compared to UWP to gain wider adoption from existing UWP developers.
 
 WPF developers looking for a fresh look and the prospect of future feature gains may want to start looking at WinUI despite its performance deficit.
+
+## Warning
+
+As much as it pains me to say this, all Microsoft XAML tech initiatives are or will be a dead end.  Silverlight, WPF, UWP, Xamarin, WinUI were abandoned by Microsoft with dubious reasoning behind each step "forward".  The namespace changes introduced in WinUI were so obviously intended to break UWP projects from easily moving to the new variant, it's a wonder any developers are left even looking at WinUI.  The posturing aroung UWP was disengenuous when it was being deprecated.  WinUI is now in a dead man walking state.  WinUI is dead in every way except an official announcement as such.  MAUI will be dead in less than four years.  This has caused great harm to the developers that bought into Microsoft's promises.  Only good old Win32 is still viable.  To Microsoft/Intel, the ride right up to the year 2014 was a blast.  Thank you very much for that.
